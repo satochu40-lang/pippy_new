@@ -1,0 +1,71 @@
+/* 画面全体を優しくするにゃ */
+body {
+  background-color: #fff5f8; /* 優しいさくら色 */
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+/* Pippyの画像を丸くして、ピンクの光を出すにゃ */
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* まん丸にゃ */
+  border: 5px solid #ffb6c1; /* ピンクの縁取り */
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.8); /* ふわっと光るにゃ */
+  transition: transform 0.3s; /* 触ると動く準備にゃ */
+}
+
+img:hover {
+  transform: scale(1.1) rotate(5deg); /* マウスを乗せると喜んで動くにゃ！ */
+}
+
+/* ボタンを宝石みたいにするにゃ */
+button, .btn {
+  background: linear-gradient(to bottom, #ff9eb5, #ff6b8b);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 139, 0.4);
+}
+/* カレンダー全体の枠を可愛くするにゃ */
+.calendar-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+  margin-top: 30px;
+}
+
+/* カレンダーのテーブル（表）のデザインにゃ */
+.simple-calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.simple-calendar th {
+  padding: 10px;
+  color: #ff6b8b; /* 曜日をピンクににゃ */
+}
+
+.simple-calendar td {
+  height: 80px;
+  width: 14%;
+  border: 1px solid #ffe4e1;
+  vertical-align: top;
+  padding: 5px;
+  background-color: #fffafa;
+}
+
+/* 今日の日付を特別な色にするにゃ */
+.simple-calendar .today {
+  background-color: #fff0f5;
+}
+
+.today-mark {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ffb6c1;
+}

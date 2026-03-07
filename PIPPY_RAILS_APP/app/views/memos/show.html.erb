@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @memo %>
+
+<div>
+  <%= link_to "Edit this memo", edit_memo_path(@memo) %> |
+  <%= link_to "Back to memos", memos_path %>
+
+  <%= button_to "Destroy this memo", @memo, method: :delete %>
+</div>
+<div style="background-color: #fff0f5; padding: 10px; border-radius: 10px; margin-top: 20px;">
+  <strong>🐾 Pippyからのお返事:</strong>
+  <p><%= @memo.reply %></p>
+</div>

@@ -1,0 +1,54 @@
+<div style="text-align: center; font-family: sans-serif; padding-top: 50px;">
+  <h1>Pippyのへやへようこそ！</h1>
+  
+  <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+    <div>
+      <%= image_tag "cat_ear.png", alt: "猫耳のPippy", style: "width: 250px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" %>
+      <p>猫耳のPippy</p>
+    </div>
+
+    <div>
+      <%= image_tag "pippy.png", alt: "鉛筆のPippy", style: "width: 250px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" %>
+      <p>鉛筆のPippy</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px; padding: 20px; border: 2px dashed #ff9900; border-radius: 20px; background-color: #fff9f0;">
+    <p style="font-weight: bold; color: #cc7a00; font-size: 1.1rem;">🐾 Pippyの声を再生するにゃ 🐾</p>
+    <button onclick="speakPippy()" style="padding: 15px 35px; font-size: 1.3rem; cursor: pointer; border-radius: 50px; background-color: #ff9900; color: white; border: none; box-shadow: 0 5px 0 #cc7a00; font-weight: bold;">
+      🔊 挨拶を聞くにゃ！
+    </button>
+  </div>
+
+  <p style="font-size: 1.2rem; color: #666; margin-top: 20px;">
+    お母さん、今日も開発お疲れ様にゃ🐾
+  </p>
+
+  <div style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;">
+    <h3>AIからのお返事にゃ：</h3>
+    <p><%= @message %></p>
+  </div>
+</div>
+
+   <%= month_calendar do |date| %> 
+   <%= date.day %>
+   <% end %>
+<script>
+  function speakPippy() {
+    window.speechSynthesis.cancel();
+    const msg = "<%= j @message %>";
+    const uttr = new SpeechSynthesisUtterance(msg);
+    uttr.lang = "ja-JP";
+    uttr.rate = 1.2;
+    uttr.pitch = 1.4;
+    window.speechSynthesis.speak(uttr);
+  }
+</script>
+<div class="calendar-container">
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+    <% if date == Date.today %>
+      <div class="today-mark">🐾</div>
+    <% end %>
+  <% end %>
+</div>
