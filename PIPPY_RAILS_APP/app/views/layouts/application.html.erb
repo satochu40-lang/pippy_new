@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+  <script>
+  function playKiraSound() {
+    console.log("ボタンが押されたにゃ！"); // ←これが掲示板に出るかチェックにゃ
+    const audio = new Audio('/sounds/kira.mp3');
+    audio.play().catch(error => {
+      console.log("エラーが出たにゃ：", error);
+    });
+  }
+</script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>

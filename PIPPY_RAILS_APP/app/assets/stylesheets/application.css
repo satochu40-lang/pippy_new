@@ -69,3 +69,35 @@ button, .btn {
   text-align: center;
   color: #ffb6c1;
 }
+/* Pippyを可愛くする魔法のコード */
+body {
+  background-color: #fff0f5; /* ラベンダーピンクにゃ！ */
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  color: #5d4037; /* 文字を優しいブラウンにするにゃ */
+}
+
+h1 {
+  color: #ff69b4; /* タイトルを可愛いピンクににゃ！ */
+  text-align: center;
+  font-size: 2em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* 少し影をつけてふわっとさせるにゃ */
+}
+/* ボタンをキラキラ・ワクワクにする魔法 */
+.btn, button, input[type="submit"] {
+  background: linear-gradient(135deg, #ff9ad8 0%, #ff1493 100%); /* ピンクのグラデーションにゃ！ */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px; /* 角を丸くして可愛くするにゃ */
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3); /* ボタンの周りにふんわり光る影にゃ */
+  cursor: pointer;
+  transition: all 0.3s ease; /* 動きをなめらかにするにゃ */
+}
+
+/* マウスを乗せた時のキラキラ演出にゃ！ */
+.btn:hover, button:hover, input[type="submit"]:hover {
+  transform: translateY(-3px); /* ぴょこっと浮き上がるにゃ */
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.5); /* 影がもっとキラキラするにゃ */
+  filter: brightness(1.1); /* 少し明るくなって光って見えるにゃ */
+}
