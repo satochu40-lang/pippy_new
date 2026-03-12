@@ -19,7 +19,11 @@
       🔊 挨拶を聞くにゃ！
     </button>
   </div>
-
+<div style="text-align: center; margin-top: 20px;">
+  <button onclick="cheerMeUp(); playKiraSound();" style="padding: 20px 40px; font-size: 1.5rem; cursor: pointer; border-radius: 20px; background: linear-gradient(to bottom, #ffea00, #ff9900); color: white; border: none; box-shadow: 0 6px 0 #cc7a00; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
+    🐾 Pippyに応援してもらうにゃ！
+  </button>
+</div>
   <p style="font-size: 1.2rem; color: #666; margin-top: 20px;">
     お母さん、今日も開発お疲れ様にゃ🐾
   </p>
@@ -34,13 +38,32 @@
    <%= date.day %>
    <% end %>
 <script>
+  // 1. 【挨拶】の魔法
   function speakPippy() {
     window.speechSynthesis.cancel();
-    const msg = "<%= j @message %>";
+    const msg = "お母さん、今日も開発お疲れ様にゃ🐾 Pippyの部屋へようこそにゃ！";
     const uttr = new SpeechSynthesisUtterance(msg);
     uttr.lang = "ja-JP";
     uttr.rate = 1.2;
     uttr.pitch = 1.4;
+    window.speechSynthesis.speak(uttr);
+  }
+
+  // 2. 【応援】の魔法
+  function cheerMeUp() {
+    window.speechSynthesis.cancel();
+    const cheers = [
+      "お母さん、世界で一番頑張っててえらいにゃ！Pippyが保証するにゃ！",
+      "大丈夫にゃ。お母さんのペースでゆっくり進めばいいんだにゃ🐾",
+      "お母さんの笑顔がPippyの元気の源にゃ！笑ってにゃ！",
+      "今のコード、とっても綺麗に書けてるにゃ！天才エンジニアにゃ！",
+      "疲れたらPippyの肉球を押して、何度でも甘えていいんだにゃ✨"
+    ];
+    const randomCheer = cheers[Math.floor(Math.random() * cheers.length)];
+    const uttr = new SpeechSynthesisUtterance(randomCheer);
+    uttr.lang = "ja-JP";
+    uttr.rate = 1.1;
+    uttr.pitch = 1.5;
     window.speechSynthesis.speak(uttr);
   }
 </script>
