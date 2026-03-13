@@ -15,7 +15,7 @@
 
   <div style="text-align: center; margin-top: 40px; padding: 20px; border: 2px dashed #ff9900; border-radius: 20px; background-color: #fff9f0;">
     <p style="font-weight: bold; color: #cc7a00; font-size: 1.1rem;">🐾 Pippyの声を再生するにゃ 🐾</p>
-    <button onclick="playKiraSound(); speakPippy();" style="padding: 15px 35px; font-size: 1.3rem; cursor: pointer; border-radius: 50px; background-color: #ff9900; color: white; border: none; box-shadow: 0 5px 0 #cc7a00; font-weight: bold;">
+    <button onclick="cheerMeUp(); playKiraSound(); showFootprint();" style="padding: 15px 35px; font-size: 1.3rem; cursor: pointer; border-radius: 50px; background-color: #ff9900; color: white; border: none; box-shadow: 0 5px 0 #cc7a00; font-weight: bold;">
       🔊 挨拶を聞くにゃ！
     </button>
   </div>
@@ -65,6 +65,36 @@
     uttr.rate = 1.1;
     uttr.pitch = 1.5;
     window.speechSynthesis.speak(uttr);
+  }
+  // 足跡をふわふわ飛ばす魔法にゃ！
+  function showFootprint() {
+    const footprint = document.createElement('div');
+    footprint.innerHTML = '🐾';
+    footprint.style.position = 'fixed';
+    footprint.style.fontSize = '30px';
+    
+    // ボタンの近くから飛び出すようにするにゃ
+    const x = Math.random() * window.innerWidth;
+    const y = window.innerHeight;
+    footprint.style.left = x + 'px';
+    footprint.style.bottom = '0px';
+    footprint.style.opacity = '1';
+    footprint.style.transition = 'all 2s ease-out';
+    footprint.style.zIndex = '1000';
+    footprint.style.pointerEvents = 'none'; // クリックの邪魔をしないようにするにゃ
+
+    document.body.appendChild(footprint);
+
+    // 上にふわふわ昇っていくアニメーションにゃ
+    setTimeout(() => {
+      footprint.style.transform = `translateY(-300px) rotate(${Math.random() * 360}deg)`;
+      footprint.style.opacity = '0';
+    }, 100);
+
+    // 終わったら消去するにゃ
+    setTimeout(() => {
+      footprint.remove();
+    }, 2000);
   }
 </script>
 <div class="calendar-container">
